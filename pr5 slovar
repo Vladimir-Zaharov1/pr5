@@ -1,0 +1,92 @@
+grades = {"Аня": 5, "Борис": 4, "Вера": 3}
+print("Оценка Веры:", grades["Вера"])
+
+
+city_info = {"Москва": 1260, "Казань": 125, "Сочи": 466}
+city_info["Тверь"] = 880      
+city_info["Сочи"] = 467       
+del city_info["Казань"]         
+print(city_info)
+
+
+animals = {"кошка": "мяу", "собака": "гав", "корова": "муу"}
+lookup = input("Введите животное: ")
+
+if lookup in animals:
+    print(animals[lookup])
+else:
+    print("Нет такого ключа")
+
+
+device = {"ноутбук": 55000, "мышь": 1200, "клавиатура": 3400, "монитор": 21000}
+print("Ключи:", list(device.keys()))
+print("Значения:", list(device.values()))
+print("Количество пар:", len(device))
+
+
+shop = {"хлеб": 45, "молоко": 90, "сыр": 320, "чай": 150}
+for item in shop:
+    print(item, "стоит", shop[item], "рублей")
+
+
+shop2 = {"телефон": 45000, "планшет": 28000, "наушники": 7500, "чехол": 1200}
+price_sum = 0
+priciest = ""
+
+for item in shop2:
+    price_sum += shop2[item]
+    if shop2[item] > shop2.get(priciest, 0):
+        priciest = item
+
+print("Общая сумма:", price_sum)
+print("Самый дорогой товар:", priciest)
+
+
+line = "программирование"
+char_count = {}
+
+for symbol in line:
+    if symbol in char_count:
+        char_count[symbol] += 1
+    else:
+        char_count[symbol] = 1
+
+print(char_count)
+
+
+sentence = "кот собака кот птица собака кот рыба"
+word_count = {}
+
+for word in sentence.split():
+    word_count[word] = word_count.get(word, 0) + 1
+
+top_word = ""
+for word in word_count:
+    if top_word == "" or word_count[word] > word_count[top_word]:
+        top_word = word
+
+print(word_count)
+print("Самое частое слово:", top_word)
+
+
+original = {"один": 1, "два": 2, "три": 3}
+flipped = {}
+
+for word in original:
+    flipped[original[word]] = word
+
+print(flipped)
+
+
+countries = ["Россия", "Франция", "Япония", "Бразилия"]
+capitals = ["Москва", "Париж", "Токио", "Бразилиа"]
+world = {}
+
+for position in range(len(countries)):
+    world[countries[position]] = capitals[position]
+
+choice = input("Введите страну: ")
+if choice in world:
+    print("Столица страны", choice, "—", world[choice])
+else:
+    print("Такой страны нет в списке")
