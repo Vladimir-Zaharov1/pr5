@@ -1,0 +1,95 @@
+k = 1
+while k <= 10:
+    print(k, end=" ")
+    k += 1
+
+
+total = 0
+value = int(input("Введите число (0 — стоп): "))
+
+while value != 0:
+    total += value
+    value = int(input("Введите число (0 — стоп): "))
+
+print("Сумма введённых чисел:", total)
+
+
+num = int(input("Введите натуральное число: "))
+digits = 0
+
+while num > 0:
+    num //= 10
+    digits += 1
+
+print("Количество цифр:", digits)
+
+
+num = int(input("Введите натуральное число: "))
+digit_sum = 0
+
+while num > 0:
+    digit_sum += num % 10
+    num //= 10
+
+print("Сумма цифр:", digit_sum)
+
+
+num = int(input("Введите натуральное число: "))
+reversed_num = 0
+
+while num > 0:
+    reversed_num = reversed_num * 10 + num % 10
+    num //= 10
+
+print("Число наоборот:", reversed_num)
+
+
+limit = int(input("Введите число n: "))
+power = 1
+
+while power <= limit:
+    print(power, end=" ")
+    power *= 2
+
+
+correct = "python123"
+attempt = input("Введите пароль: ")
+
+while attempt != correct:
+    attempt = input("Неверный пароль. Попробуйте снова: ")
+
+print("Пароль верный!")
+
+
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+while b != 0:
+    a, b = b, a % b
+
+print("НОД равен:", a)
+
+
+limit = int(input("Введите число n: "))
+first, second = 0, 1
+
+while first <= limit:
+    print(first, end=" ")
+    first, second = second, first + second
+
+
+import random
+
+secret = random.randint(1, 100)
+tries = 0
+guess = 0
+
+while guess != secret:
+    guess = int(input("Ваш вариант: "))
+    tries += 1
+    if guess < secret:
+        print("Больше")
+    elif guess > secret:
+        print("Меньше")
+
+print("Угадал!Попыток:", tries)
